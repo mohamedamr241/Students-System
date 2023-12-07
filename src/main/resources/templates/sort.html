@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" th:href="@{/lib/bootstrap/dist/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/site.css}" href="~/css/site.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://localhost:8080">Students</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarColor01"
+            aria-controls="navbarColor01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/show">Show </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080">Add </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/delete"
+                  >Delete</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/search"
+                  >Search</a
+                >
+                <span class="visually-hidden">(current)</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="http://localhost:8080/sort"
+                  >Sort</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <main role="main" class="pb-3">
+        <div class="container" id="all">
+          <div class="row pt-4 pb-4">
+            <div class="col-lg-6 col-md-4">
+              <h2 class="text-primary">Sort All Students</h2>
+            </div>
+          </div>
+          <form action="" id="sort">
+            <div class="mb-3">
+              <label>Attribute: </label>
+              <select class="form-select" id="att">
+                <option disabled selected>--Select Attribute--</option>
+                <option>ID</option>
+                <option>FirstName</option>
+                <option>LastName</option>
+                <option>Gender</option>
+                <option>GPA</option>
+                <option>Level</option>
+                <option>Address</option>
+              </select>
+              <label>Sort By: </label>
+              <select class="form-select" id="meth">
+                <option disabled selected>--Select Sort type--</option>
+                <option>ascending</option>
+                <option>descending</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 150px">
+              Sort
+            </button>
+          </form>
+          <span id="error" class="text-danger"></span>
+          <p id="numofstudent"></p>
+        </div>
+      </main>
+    </div>
+
+    <script src="/lib/jquery/dist/jquery.min.js" defer="true"></script>
+    <script
+      src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer="true"
+    ></script>
+    <script src="/js/sort.js" defer="true"></script>
+  </body>
+</html>

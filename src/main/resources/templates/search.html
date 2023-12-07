@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" th:href="@{/lib/bootstrap/dist/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/site.css}" href="~/css/site.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://localhost:8080">Students</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarColor01"
+            aria-controls="navbarColor01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/show">Show </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080">Add </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/delete"
+                  >Delete</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="http://localhost:8080/search"
+                  >Search</a
+                >
+                <span class="visually-hidden">(current)</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/sort">Sort</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <main role="main" class="pb-3">
+        <div class="container" id="all">
+          <div class="row pt-4 pb-4">
+            <div class="col-lg-6 col-md-4">
+              <h2 class="text-primary">Search for Student</h2>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="mr-3" style="font-size: 1.2rem">Select Option:</label>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input rad"
+                type="radio"
+                name="options"
+                id="radioId"
+                value="Id"
+              />
+              <label
+                class="form-check-label"
+                style="font-size: 1.2rem"
+                for="radioId"
+                >Id</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input rad"
+                type="radio"
+                name="options"
+                id="radioFirstName"
+                value="first-name"
+              />
+              <label
+                class="form-check-label"
+                style="font-size: 1.2rem"
+                for="radioFirstName"
+                >First Name</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input rad"
+                type="radio"
+                name="options"
+                id="radioLastname"
+                value="last-name"
+              />
+              <label
+                class="form-check-label"
+                style="font-size: 1.2rem"
+                for="radioLastname"
+                >Last Name</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input rad"
+                type="radio"
+                name="options"
+                id="radioGender"
+                value="Gender"
+              />
+              <label
+                class="form-check-label"
+                style="font-size: 1.2rem"
+                for="radioGender"
+                >Gender</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input rad"
+                type="radio"
+                name="options"
+                id="radioAddress"
+                value="address"
+              />
+              <label
+                class="form-check-label"
+                style="font-size: 1.2rem"
+                for="radioAddress"
+                >Address</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input rad"
+                type="radio"
+                name="options"
+                id="radioGPA"
+                value="gpa"
+              />
+              <label
+                class="form-check-label"
+                style="font-size: 1.2rem"
+                for="radioGPA"
+                >GPA</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input rad"
+                type="radio"
+                name="options"
+                id="radioLevel"
+                value="level"
+              />
+              <label
+                class="form-check-label"
+                style="font-size: 1.2rem"
+                for="radioLevel"
+                >Level</label
+              >
+            </div>
+          </div>
+          <form action="" id="id" hidden>
+            <div class="mb-3">
+              <label>Id</label>
+              <input class="form-control" name="_ID" />
+              <span class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 150px">
+              Search
+            </button>
+          </form>
+          <form action="" id="firstname" hidden>
+            <div class="mb-3">
+              <label>First name</label>
+              <input class="form-control" name="_FirstName" />
+              <span class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 150px">
+              Search
+            </button>
+          </form>
+          <form action="" id="lastname" hidden>
+            <div class="mb-3">
+              <label>Last name</label>
+              <input class="form-control" name="_LastName" />
+              <span class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 150px">
+              Search
+            </button>
+          </form>
+          <form action="" id="gender" hidden>
+            <div class="mb-3">
+              <label>Gender</label>
+              <input class="form-control" name="_Gender" />
+              <span class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 150px">
+              Search
+            </button>
+          </form>
+          <form action="" id="address" hidden>
+            <div class="mb-3">
+              <label>Address</label>
+              <input class="form-control" name="_Address" />
+              <span class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 150px">
+              Search
+            </button>
+          </form>
+          <form action="" id="gpa" hidden>
+            <div class="mb-3">
+              <label>GPA</label>
+              <input class="form-control" name="_GPA" />
+              <span class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 150px">
+              Search
+            </button>
+          </form>
+          <form action="" id="level" hidden>
+            <div class="mb-3">
+              <label>Level</label>
+              <input class="form-control" name="_Level" />
+              <span class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 150px">
+              Search
+            </button>
+          </form>
+          <span id="error" class="text-danger"></span>
+          <p id="numofstudent"></p>
+        </div>
+      </main>
+    </div>
+
+    <script src="/lib/jquery/dist/jquery.min.js" defer="true"></script>
+    <script
+      src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer="true"
+    ></script>
+    <script src="/js/site.js" defer="true"></script>
+    <script src="/js/search.js" defer="true"></script>
+  </body>
+</html>
